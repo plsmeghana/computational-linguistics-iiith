@@ -1,4 +1,4 @@
-var select = document.getElementById("language"); 
+let select = document.getElementById("language"); 
 var hindisen1 = ["राम और श्याम बाजार गयें", "राम और श्याम गयें बाजार", "बाजार गयें राम और श्याम", "गयें बाजार राम और श्याम"];
 var hindisen2 = ["राम सोया और श्याम भी", "श्याम सोया और राम भी", "सोया श्याम और राम भी", "सोया राम और श्याम भी"];
 var hindisen3 = ["मैंने उसे बताया कि राम सो रहा है", "मैंने उसे बताया कि सो रहा है राम", "उसे मैंने बताया कि राम सो रहा है", "उसे मैंने बताया कि सो रहा है राम", "मैंने बताया उसे कि राम सो रहा है", "मैंने बताया उसे कि                                                  सो रहा है राम", "उसे बताया मैंने कि राम सो रहा है", "उसे बताया मैंने कि सो रहा है राम", "बताया मैंने उसे कि राम सो रहा है", "बताया मैंने उसे कि सो रहा है राम", "बताया उसे मैंने कि राम सो रहा है",                                                          "बताया उसे मैंने कि सो रहा है राम"];
@@ -18,3 +18,10 @@ var englishsen9 = ["the teacher returned the book after she noticed the error", 
 var englishsen10 = ["I told her that I bought a book yesterday", "I told her yesterday that I bought a book",                  "yesterday I told her that I bought a book", "I bought a book that I told her yesterday", "I                  bought a book yesterday that I told her", "yesterday I bought a book that I told her"];
 var arrhindi = [hindisen1, hindisen2, hindisen3, hindisen4, hindisen5, hindisen6, hindisen7];
 var arrenglish = [englishsen1, englishsen2, englishsen3, englishsen4, englishsen5, englishsen6, englishsen7,                    englishsen8, englishsen9, englishsen10];
+function languagefun() {
+     document.getElementById('lang1').innerHTML =
+         ("Form a  sentence (Declarative or Interrogative or any other type) from the given words")
+     document.getElementById('lang2').innerHTML =
+         ("select the buttons in proper order")
+
+ }
