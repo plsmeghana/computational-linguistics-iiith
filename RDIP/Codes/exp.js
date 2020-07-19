@@ -37,17 +37,28 @@ function shuffle(jumbled) {
     return jumble;
 }
 var sentence = "";
-
-function fs(id, val) {
+function formed(id, value) {
     document.getElementById("sen4").innerHTML = "Formed Sentence";
-    sentence += val + " ";
+    sentence += value + " ";
     document.getElementById("sen5").innerHTML = sentence;
     document.getElementById(id).style.display = "none";
-    document.getElementById("sen6").innerHTML = "<center><button id='reform' onclick='rs()'>Re-form the sentence</button></center>"
+    document.getElementById("sen6").innerHTML = "<center><button id='reset' onclick='reset()'>Re-form the sentence</button></center>"
     c++;
-    if (b == c) {
-        document.getElementById("sen7").innerHTML = "<center><button id='correctness'  onclick='cs()'>Check the correctness</button></center>"
+    
+}
+function reset() {
+    for (j = 0; j <= i.length - 1; j++) {
+        document.getElementById('btn' + j).style.display = "";
     }
+    sentence = "";
+    document.getElementById("sen5").innerHTML = "";
+    document.getElementById("sen7").innerHTML = "";
+    document.getElementById("sen6").innerHTML = "";
+    document.getElementById("sen10").innerHTML = "";
+    document.getElementById("sen4").innerHTML = "";
+    document.getElementById("sen8").innerHTML = "";
+    document.getElementById("sen9").innerHTML = "";
+    c = 0;
 }
 
 
@@ -55,13 +66,13 @@ function languagefun() {
     if (select.value === '2') {
         ans = "";
         sentence = "";
-        document.getElementById("sen2").innerHTML = "";
-        document.getElementById("sen3").innerHTML = "";
         document.getElementById("sen4").innerHTML = "";
         document.getElementById("sen5").innerHTML = "";
         document.getElementById("sen6").innerHTML = "";
         document.getElementById("sen7").innerHTML = "";
         document.getElementById("sen8").innerHTML = "";
+        document.getElementById("sen9").innerHTML = "";
+        document.getElementById("sen10").innerHTML = "";
         document.getElementById("lang1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
         document.getElementById("lang2").innerHTML = "(select the buttons in proper order)";
         r = Math.floor(Math.random() * arrenglish.length);
@@ -71,9 +82,9 @@ function languagefun() {
         c = 0;
         var bu = "";
         var fbu = "";
-        for (j = 0; j < i.length - 1; j++) {
+        for (j = 0; j <= i.length - 1; j++) {
             val = i[j];
-            bu = "  <button id='btn" + i + "' onclick='fs(this.id,this.val)' val='" + val + "'>" + val + "</button>  ";
+            bu = "  <button id='btn" + j + "' onclick='formed(this.id,this.value)' value='" + val + "'>" + val + "</button>  ";
             fbu += bu;
             b++
 
@@ -84,13 +95,13 @@ function languagefun() {
         ans = "";
         // document.getElementById("correctans").innerHTML = "";
         sentence = "";
-        document.getElementById("sen2").innerHTML = "";
-        document.getElementById("sen3").innerHTML = "";
         document.getElementById("sen4").innerHTML = "";
         document.getElementById("sen5").innerHTML = "";
         document.getElementById("sen6").innerHTML = "";
         document.getElementById("sen7").innerHTML = "";
         document.getElementById("sen8").innerHTML = "";
+        document.getElementById("sen9").innerHTML = "";
+        document.getElementById("sen10").innerHTML = "";
         document.getElementById("lang1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
         document.getElementById("lang2").innerHTML = "(select the buttons in proper order)";
         r = Math.floor(Math.random() * arrhindi.length);
@@ -100,9 +111,9 @@ function languagefun() {
         c = 0;
         var bu = "";
         var fbu = "";
-        for (j = 0; j < i.length - 1; j++) {
+        for (j = 0; j <= i.length - 1; j++) {
             val = i[j];
-            bu = "  <button id='btn" + i + "' onclick='fs(this.id,this.val)' val='" + val + "'>" + val + "</button>  ";
+            bu = "  <button id='btn" + j + "' onclick='formed(this.id,this.value)' value='" + val + "'>" + val + "</button>  ";
             fbu += bu;
             b++
 
