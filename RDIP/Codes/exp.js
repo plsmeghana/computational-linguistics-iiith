@@ -22,7 +22,7 @@ function formed(id, value) {
        sentence += value + " ";
     document.getElementById("sen5").innerHTML = sentence;
     document.getElementById(id).style.display = "none";
-document.getElementById("sen6").innerHTML = "<center><button id='reset' onclick='reset()'>Re-form the sentence</button></center>"
+document.getElementById("reform").style.visibility="visible";
     c++;
 if (b == c) {
         document.getElementById("sen7").innerHTML = "<center><button id='correctness'  onclick='correctsen()'>Check the correctness</button></center>"
@@ -34,8 +34,9 @@ function reset() {
     }
     sentence = "";
     document.getElementById("sen5").innerHTML = "";
+ document.getElementById("correctan").innerHTML = "";
     document.getElementById("sen7").innerHTML = "";
-    document.getElementById("sen6").innerHTML = "";
+    //document.getElementById("sen6").innerHTML = "";
     document.getElementById("sen10").innerHTML = "";
     document.getElementById("sen4").innerHTML = "";
     document.getElementById("sen8").innerHTML = "";
@@ -49,10 +50,45 @@ function correctsen() {
         var m = sr1.localeCompare(sr);
         if (m == 0) {
             document.getElementById('sen8').innerHTML = "RIGHT";
+return true;
 
         }
     }
     document.getElementById("sen9").innerHTML = "WRONG";
+document.getElementById("sen10").innerHTML = "<center><button id='showansbtn' onclick='getcor()'>Get Correct Sentence</button></center>"
+}
+function getcor() {
+    ans = "";
+    var ts = 0;
+    document.getElementById("correctan").innerHTML = "";
+    if (select.value == '2') {
+        ts = arrenglish[r].length - 1;
+        document.getElementById("sen10").innerHTML = "<center><button id='showamsbtn' onclick='hide()'>hide correct answer</button></center>"
+        for (i = 0; i <= ts; i++) {
+            ans += arrenglish[r][i] + "<br>"
+        }
+        document.getElementById("correctan").innerHTML = ans;
+    } else if (select.value == '3') {
+        ts = arrhindi[r].length - 1;
+        document.getElementById("sen10").innerHTML = "<center><button id='showamsbtn' onclick='hide()'>hide correct answer</button></center>"
+        for (i = 0; i <= ts; i++) {
+            ans += arrhindi[r][i] + "<br>"
+        }
+        document.getElementById("correctan").innerHTML = ans;
+    }
+}
+
+function hide() {
+    document.getElementById('sen10').innerHTML = "<center><button id='showansbtn' onclick='togg()'>Get Correct Sentence</button></center>"
+    document.getElementById("correctan").innerHTML = "";
+}
+
+function togg() {
+    while (document.getElementById("correctan").innerHTML == "") {
+
+        document.getElementById('sen10').innerHTML = "<center><button id='showansbtn' onclick='hide()'>hide correct answer</button></center>"
+        document.getElementById("correctan").innerHTML = ans;
+    }
 }
 
 function languagefun() {
@@ -61,7 +97,7 @@ if (select.value === '2') {
 sentence = "";
 document.getElementById("sen4").innerHTML = "";
         document.getElementById("sen5").innerHTML = "";
-        document.getElementById("sen6").innerHTML = "";
+        //document.getElementById("sen6").innerHTML = "";
         document.getElementById("sen7").innerHTML = "";
         document.getElementById("sen8").innerHTML = "";
         document.getElementById("sen9").innerHTML = "";
@@ -89,7 +125,7 @@ if (select.value === '3') {
  sentence = "";
  document.getElementById("sen4").innerHTML = "";
         document.getElementById("sen5").innerHTML = "";
-        document.getElementById("sen6").innerHTML = "";
+        //document.getElementById("sen6").innerHTML = "";
         document.getElementById("sen7").innerHTML = "";
         document.getElementById("sen8").innerHTML = "";
         document.getElementById("sen9").innerHTML = "";
