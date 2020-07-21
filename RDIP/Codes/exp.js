@@ -18,7 +18,7 @@ function shuffle(jumbled) {
 }
 var sentence = "";
 function formed(id, value) {
-    document.getElementById("sen4").innerHTML = "Formed Sentence";
+    document.getElementById("sen4").innerHTML = "Formed Sentence(after selecting words)";
        sentence += value + " ";
     document.getElementById("sen5").innerHTML = sentence;
     document.getElementById(id).style.display = "none";
@@ -49,12 +49,12 @@ function correctsen() {
         var sr1 = ansarray[i];
         var m = sr1.localeCompare(sr);
         if (m == 0) {
-            document.getElementById('sen8').innerHTML = "RIGHT";
+            document.getElementById('sen8').innerHTML = "Right Answer!!!";
 return true;
 
         }
     }
-    document.getElementById("sen9").innerHTML = "WRONG";
+    document.getElementById("sen9").innerHTML = "Wrong Anwer!!!";
 document.getElementById("sen10").innerHTML = "<center><button id='showansbtn' onclick='getcor()'>Get Correct Sentence</button></center>"
 }
 function getcor() {
@@ -94,6 +94,7 @@ function togg() {
 function languagefun() {
 if (select.value === '2') {
         ans = "";
+document.getElementById("correctan").innerHTML = "";
 sentence = "";
 document.getElementById("sen4").innerHTML = "";
         document.getElementById("sen5").innerHTML = "";
@@ -115,13 +116,14 @@ r = Math.floor(Math.random() * arrenglish.length);
             val = i[j];
 s1 = "  <button id='btn" + j + "' onclick='formed(this.id,this.value)' value='" + val + "'>" + val + "</button>  ";
             s2 += s1;
-            b++
+            b++;
 
         }
         sen3.innerHTML = s2.trim();
     } 
 if (select.value === '3') {
         ans = "";
+document.getElementById("correctan").innerHTML = "";
  sentence = "";
  document.getElementById("sen4").innerHTML = "";
         document.getElementById("sen5").innerHTML = "";
